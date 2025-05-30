@@ -1,0 +1,22 @@
+///////////// React.js //////////
+npx create-react-app my-app
+cd my-app
+npm start
+/////////////////
+
+//////// next.js ///////
+
+npx create-next-app@latest (file name)
+npm start
+npx next dev -p 3001
+//////////
+
+////// vit@latest //
+npm create vite@latest
+
+//////////////  
+
+//////// yarn //
+yarn create react-app (my-app)
+
+//////////
