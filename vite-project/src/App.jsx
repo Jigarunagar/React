@@ -1,36 +1,17 @@
-import { useState, useRef } from 'react';
-import './App.css';
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+import Home from './page/home'
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  const intervalRef = useRef(null);
-
-  const start = () => {
-    if (intervalRef.current === null) {
-      intervalRef.current = setInterval(() => {
-        setCounter((prev) => prev + 1);
-      }, 100);
-    }
-  };
-
-  const stop = () => {
-    clearInterval(intervalRef.current);
-    intervalRef.current = null;
-  };
-
-  const reset = () => {
-    stop();
-    setCounter(0);
-  };
+  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <div id="counter">{counter}</div>
-      <button onClick={start}>Start</button>
-      <button onClick={stop}>Stop</button>
-      <button onClick={reset}>Reset</button>
-    </div>
-  );
+    <>
+      <Home/>
+    </>
+  )
 }
 
-export default App;
+export default App
