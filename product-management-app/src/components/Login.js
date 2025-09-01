@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { login } from '../redux/actions/authActions';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { login } from "../redux/actions/authActions";
 
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error } = useSelector((state) => state.auth);
+
+  // Safely access auth state with default values
+  const authState = useSelector((state) => state.auth || {});
+  const { loading = false, error = null } = authState;
+
   const [credentials, setCredentials] = useState({
-    username: '',
-    password: ''
+    username: "",
+    password: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(credentials)).then((success) => {
-      if (success) navigate('/products');
+      if (success) navigate("/products");
     });
   };
 
@@ -45,10 +49,12 @@ const Login = () => {
                 </div>
                 <div className="mb-3">
                   <label className="form-label">Password</label>
+                  // In the password input field, add autocomplete attribute
                   <input
                     type="password"
                     className="form-control"
                     name="password"
+                    autoComplete="current-password"
                     value={credentials.password}
                     onChange={handleChange}
                     required
@@ -59,7 +65,7 @@ const Login = () => {
                   className="btn btn-primary w-100"
                   disabled={loading}
                 >
-                  {loading ? 'Logging in...' : 'Login'}
+                  {loading ? "Logging in..." : "Login"}
                 </button>
               </form>
               <div className="text-center mt-3">

@@ -6,7 +6,10 @@ import { logout } from '../redux/actions/authActions';
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  
+  // Safely access auth state with default values
+  const authState = useSelector((state) => state.auth || {});
+  const { isAuthenticated = false, user = null } = authState;
 
   const handleLogout = () => {
     dispatch(logout());

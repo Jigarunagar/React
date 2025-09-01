@@ -30,7 +30,22 @@ const ProductList = () => {
   const categories = [...new Set(products.map((product) => product.category))];
 
   if (loading) return <div className="text-center">Loading...</div>;
-  if (error) return <div className="alert alert-danger">Error: {error}</div>;
+  if (error) return (
+    <div className="container mt-4">
+      <div className="alert alert-danger">
+        Error: {error}
+        <br />
+        <small>Make sure JSON server is running on port 3001</small>
+        <br />
+        <button 
+          className="btn btn-primary mt-2"
+          onClick={() => dispatch(fetchProducts())}
+        >
+          Retry
+        </button>
+      </div>
+    </div>
+  );
 
   return (
     <div className="container mt-4">
@@ -83,7 +98,7 @@ const ProductList = () => {
         ))}
       </div>
 
-      {filteredProducts.length === 0 && (
+      {filteredProducts.length === 0 && !loading && (
         <div className="text-center text-muted">No products found</div>
       )}
     </div>
