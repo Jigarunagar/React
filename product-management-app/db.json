@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone 14",
+      "price": 999,
+      "image": "https://via.placeholder.com/150",
+      "category": "Electronics"
+    },
+    {
+      "id": 2,
+      "title": "MacBook Pro",
+      "price": 1999,
+      "image": "https://via.placeholder.com/150",
+      "category": "Electronics"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "password123"
+    }
+  ]
+}
