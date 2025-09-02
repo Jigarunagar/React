@@ -1,18 +1,11 @@
 {
   "products": [
     {
-      "id": 1,
-      "title": "iPhone 14",
-      "price": 999,
-      "image": "https://via.placeholder.com/150",
-      "category": "Electronics"
-    },
-    {
-      "id": 2,
       "title": "MacBook Pro",
       "price": 1999,
-      "image": "https://via.placeholder.com/150",
-      "category": "Electronics"
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTQ5iJJxsIhwi1hAaW8G7LklQE6EtFelLHuF-a51OLByCxcxft5NLOw1gPlRhNnpaZudOLtolqGWvvvuMTp75bMEI0ljoMLdgFNaemhr3u-0bXyCxj3D6PruA",
+      "category": "Electronics",
+      "id": 2
     }
   ],
   "users": [
@@ -20,6 +13,11 @@
       "id": 1,
       "username": "admin",
       "password": "password123"
+    },
+    {
+      "id": 2,
+      "username": "admina",
+      "password": "password1234"
     }
   ]
 }
